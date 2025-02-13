@@ -40,6 +40,9 @@ images.forEach(image => {
   let galleryImg = document.createElement('img');
   galleryImg.src = image.url;
   galleryImg.alt = image.alt;
+  galleryImg.width = '360';
+  galleryImg.height = '300';
+
   console.log(galleryImg);
 
   let galleryList = document.createElement('li');
