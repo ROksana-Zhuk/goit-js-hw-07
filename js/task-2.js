@@ -36,6 +36,8 @@ const images = [
   },
 ];
 
+let galleryArray = [];
+
 images.forEach(image => {
   let galleryImg = document.createElement('img');
   galleryImg.src = image.url;
@@ -49,7 +51,7 @@ images.forEach(image => {
   galleryList.classList.add('gallery-list');
 
   galleryList.append(galleryImg);
-
-  let gallery = document.querySelector('.gallery');
-  gallery.append(galleryList);
+  galleryArray.push(galleryList);
 });
+let gallery = document.querySelector('.gallery');
+gallery.append(...galleryArray);

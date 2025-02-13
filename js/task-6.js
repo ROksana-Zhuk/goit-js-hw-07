@@ -11,19 +11,21 @@ const boxesDivEl = document.querySelector('#boxes');
 
 function createBoxes(amount) {
   let size = 30;
+  let boxesArray = [];
   for (let i = 0; i < amount; i++) {
     const createDiv = document.createElement('div');
-    boxesDivEl.append(createDiv);
+
     const divColor = getRandomHexColor();
     createDiv.style.backgroundColor = divColor;
     createDiv.style.width = `${size}px`;
     createDiv.style.height = `${size}px`;
     size += 10;
+    boxesArray.push(createDiv);
   }
+  boxesDivEl.append(...boxesArray);
 }
 
 const create = () => {
-  //const bodyColor = getRandomHexColor();
   if (inputEl.value >= 1 && inputEl.value <= 100) {
     createBoxes(inputEl.value);
   } else {
